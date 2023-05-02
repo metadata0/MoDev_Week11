@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		527CF8382A011980004BF337 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527CF8372A011980004BF337 /* MenuView.swift */; };
+		52AA626829EE61B60044722E /* CommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA626729EE61B60044722E /* CommentView.swift */; };
 		52B21E2329E4D04E002BA7F4 /* SideProjectClubApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B21E2229E4D04E002BA7F4 /* SideProjectClubApp.swift */; };
 		52B21E2529E4D04E002BA7F4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B21E2429E4D04E002BA7F4 /* ContentView.swift */; };
 		52B21E2729E4D051002BA7F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52B21E2629E4D051002BA7F4 /* Assets.xcassets */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		527CF8372A011980004BF337 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		52AA626729EE61B60044722E /* CommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentView.swift; sourceTree = "<group>"; };
 		52B21E1F29E4D04E002BA7F4 /* SideProjectClub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SideProjectClub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52B21E2229E4D04E002BA7F4 /* SideProjectClubApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideProjectClubApp.swift; sourceTree = "<group>"; };
 		52B21E2429E4D04E002BA7F4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -64,12 +68,14 @@
 			isa = PBXGroup;
 			children = (
 				52B21E2229E4D04E002BA7F4 /* SideProjectClubApp.swift */,
+				527CF8372A011980004BF337 /* MenuView.swift */,
 				52B21E2429E4D04E002BA7F4 /* ContentView.swift */,
 				52B21E3B29E4E7F1002BA7F4 /* ItemView.swift */,
 				52B21E3D29E4E9E3002BA7F4 /* Document.swift */,
 				52B21E3F29E4EA3D002BA7F4 /* Model.swift */,
 				52B21E3929E4E6F8002BA7F4 /* ModelJSON.swift */,
 				52B21E4129E4EB99002BA7F4 /* FormatString.swift */,
+				52AA626729EE61B60044722E /* CommentView.swift */,
 				52B21E2629E4D051002BA7F4 /* Assets.xcassets */,
 				52B21E2D29E4D051002BA7F4 /* SideProjectClub.xcdatamodeld */,
 				52B21E2829E4D051002BA7F4 /* Preview Content */,
@@ -160,8 +166,10 @@
 				52B21E2529E4D04E002BA7F4 /* ContentView.swift in Sources */,
 				52B21E4029E4EA3D002BA7F4 /* Model.swift in Sources */,
 				52B21E4229E4EB99002BA7F4 /* FormatString.swift in Sources */,
+				527CF8382A011980004BF337 /* MenuView.swift in Sources */,
 				52B21E3E29E4E9E3002BA7F4 /* Document.swift in Sources */,
 				52B21E2F29E4D051002BA7F4 /* SideProjectClub.xcdatamodeld in Sources */,
+				52AA626829EE61B60044722E /* CommentView.swift in Sources */,
 				52B21E2329E4D04E002BA7F4 /* SideProjectClubApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

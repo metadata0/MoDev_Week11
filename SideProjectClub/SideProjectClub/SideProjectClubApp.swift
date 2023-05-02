@@ -9,12 +9,13 @@ import SwiftUI
 
 @main
 struct SideProjectClubApp: App {
-    @StateObject var document = Document()
+//    @StateObject var document = Document()
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environmentObject(document)
+            MenuView()
+//            ContentView()
+//                .environmentObject(document)
         }
     }
 }

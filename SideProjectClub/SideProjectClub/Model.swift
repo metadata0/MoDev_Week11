@@ -28,6 +28,17 @@ struct Model: Encodable, Decodable {
         items.append(nitem);
     }
     
+//    mutating func deleteItem(id: Int) {
+//        items.remove(at: id-1);
+//    }
+    
+    mutating func deleteItem(_ item: ItemModel) {
+        print(item.id)
+        items.remove(at: item.id)
+    }
+
+    
+    
     func itemIndex(id: Int) -> Int? {
         items.firstIndex { $0.id == id }
     }
@@ -48,7 +59,8 @@ struct ItemModel: Identifiable, Hashable, Encodable, Decodable {
     var selected: Bool = false
     var id: Int = 0
     var assetName: String = ""
-    
+    var reaction: String = ""
+    var comment: String = ""
     var colorName: String {
         String(format: "#%x", colorNum)
     }

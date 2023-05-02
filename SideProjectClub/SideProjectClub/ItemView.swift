@@ -48,12 +48,15 @@ struct ItemView: View {
     var body: some View {
         ZStack {
             if (item.selected) {
-                Rectangle()
+                RoundedRectangle(cornerRadius: 10)
                     .stroke(lineWidth: 5)
+                RoundedRectangle(cornerRadius: 10)
+                    .fill(item.color)
                 
             }
-            Rectangle()
+            RoundedRectangle(cornerRadius: 10)
                 .fill(item.color)
+                .opacity(0.2)
             // on tap here causes pause before drag begins
             //  .onTapGesture {
             //  document.select(id: item.id, state: !item.selected)

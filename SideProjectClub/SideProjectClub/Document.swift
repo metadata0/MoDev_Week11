@@ -7,16 +7,26 @@
 
 import SwiftUI
 
-class Document: ObservableObject
+class Document: ObservableObject, Identifiable
 {
     @Published var model: Model
     @Published var selectedId: Int = 0
     @Published var selectedPalette:Palette = .rgb
+    @Published var selectionState = false
+    @Published var selectedCommentText = ""
+    @Published var selectedAction = ""
+    @Published var documentImage: UIImage? = nil
+    var name: String
+    let documentId: Int
     
-    var selectedItem: ItemModel? { model.item(id: selectedId) }
     
-    init() {
+    var selectedItem: ItemModel? { model.item(id: selectedId)
+    }
+    
+    init(documentId: Int, name: String) {
         model = Model()
+        self.documentId = documentId
+        self.name = name
     }
     
     var items:[ItemModel] {
@@ -25,6 +35,9 @@ class Document: ObservableObject
     
     func clearSelection() {
         selectedId = 0
+        selectionState = false
+        //clear temporary text holder after update
+//        selectedCommentText = ""
         for index in  0..<model.items.count {
             model.items[index].selected = false;
         }
@@ -75,6 +88,8 @@ class Document: ObservableObject
             model.items[index].selected = false;
         }
         if let index = model.itemIndex(id: id) {
+            //load comment to selectedCommentText
+            selectedCommentText = model.items[index].comment
             print("ItemView selected index \(index)")
             model.items[index].selected = state;
             selectedId = id
@@ -82,6 +97,8 @@ class Document: ObservableObject
             let item = model.items[index]
             model.items.remove(at: index)
             model.items.append(item)
+            // change selection state
+            selectionState = true
         }
         else {
             print("Document select failed id \(id)")
@@ -126,6 +143,30 @@ class Document: ObservableObject
         }
     }
     
+    //write code that updates the text stored in the document
+    func update(id: Int, comment: String) {
+        print("comment test ", comment, id)
+        if let index = model.itemIndex(id: id) {
+            model.items[index].comment = comment
+            print("comment test success", comment)
+        }
+    }
+    func update(index: Int, comment: String) {
+        model.items[index].comment = comment
+    }
+    
+    func updateImg(image: UIImage) {
+        documentImage = image
+    }
+    
+    
+//clear what is written in the text field
+    func clearComment(id: Int) {
+        update(id: id, comment: "")
+        selectedCommentText = ""
+    }
+    
+        // clear all comments
     func clear () {
         selectedId = 0
         model.reset()
@@ -167,6 +208,13 @@ class Document: ObservableObject
                     y = 0
                 }
             }
+        }
+    }
+    
+    func deleteItems() {
+        if let item = model.item(id: selectedId) {
+//            print("delete document")
+            model.deleteItem(item)
         }
     }
     
